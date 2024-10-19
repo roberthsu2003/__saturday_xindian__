@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 
 class Window(tk.Tk):
     def __init__(self,**kwargs):
@@ -6,7 +7,7 @@ class Window(tk.Tk):
         self.title("這是第一個視窗")
         self.geometry("600x400")
 
-        label = tk.Label(self,text='Hello! Tkinter!')
+        label = ttk.Label(self,text='Hello! Tkinter!')
         label.pack()
 
 
