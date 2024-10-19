@@ -7,7 +7,13 @@ class Window(tk.Tk):
         self.title("這是第一個視窗")
         self.geometry("600x400")
 
-        label = ttk.Label(self,text='Hello! Tkinter!')
+        style = ttk.Style(self)
+        
+        #style.configure('TLabel',font=('Ariel', 30),foreground='red') #修改內建的TLabel
+        style.configure('Title.TLabel',font=('Ariel', 30),foreground='blue') #自訂的TLabel style
+
+
+        label = ttk.Label(self,text='Hello! Tkinter!',style='Title.TLabel')
         label.pack()
 
 
