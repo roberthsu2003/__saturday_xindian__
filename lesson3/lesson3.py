@@ -1,9 +1,9 @@
-import tkinter as tk
+from ttkthemes import ThemedTk
 from tkinter import ttk
 
-class Window(tk.Tk):
-    def __init__(self,**kwargs):
-        super().__init__(**kwargs)
+class Window(ThemedTk):
+    def __init__(self,*args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.title("這是第一個視窗")
         self.geometry("600x400")
 
@@ -19,7 +19,7 @@ class Window(tk.Tk):
 
 
 def main():
-    window = Window()
+    window = Window(theme="arc")
     window.mainloop()
 
 if __name__ == '__main__':
