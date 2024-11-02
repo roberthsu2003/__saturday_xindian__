@@ -53,6 +53,18 @@ class Window(ThemedTk):
                         onvalue='我同意',
                         offvalue='我不同意').pack(side='right')      
         bottomFrame1.pack(expand=True,fill='x',padx=10,pady=(0,30))
+        
+        bottomFrame2 = ttk.Frame(self,borderwidth=2,relief='groove',padding=[10,10,10,10])
+        self.day_selected = tk.StringVar()
+        combobox = ttk.Combobox(bottomFrame2,
+                                textvariable=self.day_selected,
+                                values=['day1','day2','day3','day4','day5'],
+                                state='readonly')        
+        combobox.set('請選擇1天')
+        combobox.bind('<<ComboboxSelected>>',self.day_changed)
+        combobox.pack()
+             
+        bottomFrame2.pack(expand=True,fill='x',padx=10,pady=(0,30))
 
     def click_left_button(self):
         messagebox.showinfo("資訊","按左按鈕")
@@ -68,6 +80,9 @@ class Window(ThemedTk):
 
     def aggrement_change(self):
         print(self.aggrement.get())
+
+    def day_changed(self,event):
+        print(self.day_selected.get())
          
         
 
