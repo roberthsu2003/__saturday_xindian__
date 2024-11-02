@@ -1,5 +1,6 @@
 from ttkthemes import ThemedTk
-from tkinter import ttk
+from tkinter import ttk,messagebox
+
 
 class Window(ThemedTk):
     def __init__(self,*args, **kwargs):
@@ -27,10 +28,14 @@ class Window(ThemedTk):
         bottomFrame.pack(expand=True,fill='x',padx=10,pady=(0,30))
 
     def click_left_button(self):
-        print("按下左按鈕")
+        messagebox.showinfo("資訊","按左按鈕")
 
     def click_right_button(self):
-        print("按下右按鈕")
+        answer = messagebox.askyesno('是否要關機','三思')
+        if answer:
+            print("要關機")
+            self.quit()
+        
 
 def main():
     window = Window(theme="arc")
