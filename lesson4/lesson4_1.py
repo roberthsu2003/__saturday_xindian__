@@ -17,10 +17,12 @@ class Window(ThemedTk):
         topFrame = ttk.Frame(self,borderwidth=2,relief='groove')
         title_label = ttk.Label(topFrame,text='全台空氣品質AQI',style='Title.TLabel')
         title_label.pack(pady=50,padx=20)
-        topFrame.pack(expand=True,fill='both',padx=10,pady=30)
+        topFrame.pack(expand=True,fill='x',padx=10,pady=30)
 
-        bottomFrame = ttk.Frame(self)
-        bottomFrame.pack()
+        bottomFrame = ttk.Frame(self,borderwidth=2,relief='groove')
+        left_btn = ttk.Button(bottomFrame,text="左按鈕")
+        left_btn.pack(side='left',expand=True,fill='x')
+        bottomFrame.pack(expand=True,fill='x',padx=10,pady=(0,30))
 
 
 
