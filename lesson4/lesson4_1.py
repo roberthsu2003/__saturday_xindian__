@@ -19,12 +19,18 @@ class Window(ThemedTk):
         title_label.pack(pady=50,padx=20)
         topFrame.pack(expand=True,fill='x',padx=10,pady=30)
 
-        bottomFrame = ttk.Frame(self,borderwidth=2,relief='groove')
-        left_btn = ttk.Button(bottomFrame,text="左按鈕")
+        bottomFrame = ttk.Frame(self,borderwidth=2,relief='groove',padding=[10,10,10,10])
+        left_btn = ttk.Button(bottomFrame,text="左按鈕",command=self.click_left_button)
         left_btn.pack(side='left',expand=True,fill='x')
+        right_btn = ttk.Button(bottomFrame,text="右按鈕",command=self.click_right_button)
+        right_btn.pack(side='right',expand=True,fill='x')
         bottomFrame.pack(expand=True,fill='x',padx=10,pady=(0,30))
 
+    def click_left_button(self):
+        print("按下左按鈕")
 
+    def click_right_button(self):
+        print("按下右按鈕")
 
 def main():
     window = Window(theme="arc")
