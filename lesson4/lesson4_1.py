@@ -44,6 +44,16 @@ class Window(ThemedTk):
         
         bottomFrame.pack(expand=True,fill='x',padx=10,pady=(0,30))
 
+        bottomFrame1 = ttk.Frame(self,borderwidth=2,relief='groove',padding=[10,10,10,10])
+        self.aggrement = tk.StringVar()
+        ttk.Checkbutton(bottomFrame1,
+                        text='我同意',
+                        variable=self.aggrement,
+                        command=self.aggrement_change,
+                        onvalue='我同意',
+                        offvalue='我不同意').pack(side='right')      
+        bottomFrame1.pack(expand=True,fill='x',padx=10,pady=(0,30))
+
     def click_left_button(self):
         messagebox.showinfo("資訊","按左按鈕")
 
@@ -55,6 +65,9 @@ class Window(ThemedTk):
 
     def on_radio_select(self,*args):
        print(self.selectedVar.get())
+
+    def aggrement_change(self):
+        print(self.aggrement.get())
          
         
 
