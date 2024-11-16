@@ -1,7 +1,7 @@
 from ttkthemes import ThemedTk
 from tkinter import ttk,messagebox
 import tkinter as tk
-import view
+from view.display import CustomDialog
 
 
 class Window(ThemedTk):
@@ -68,7 +68,7 @@ class Window(ThemedTk):
         bottomFrame2.pack(expand=True,fill='x',padx=10,pady=(0,30))
 
     def click_left_button(self):
-        customDialog = view.CustomDialog(self,title="這是我的Dialog")
+        customDialog = CustomDialog(self,title="這是我的Dialog")
         #messagebox.showinfo("資訊","按左按鈕")
 
     def click_right_button(self):
