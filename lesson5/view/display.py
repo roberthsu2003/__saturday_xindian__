@@ -13,26 +13,25 @@ class CustomDialog(Dialog):
     def body(self, master):
         # 創建對話框主體。返回應具有初始焦點的控件。
         # define columns
-        for site in self.youbikes:
-            print(site)
-            
-        columns = ('first_name', 'last_name', 'email')
+        
+
+        columns = ('sna', 'mday', 'total','rent','return')
 
         tree = ttk.Treeview(master, columns=columns, show='headings')
 
         # define headings
-        tree.heading('first_name', text='First Name')
-        tree.heading('last_name', text='Last Name')
-        tree.heading('email', text='Email')
+        tree.heading('sna', text='站點')
+        tree.heading('mday', text='日期')
+        tree.heading('total', text='總車輛數')
+        tree.heading('rent', text='可借')
+        tree.heading('return', text='可還')
 
         # generate sample data
-        contacts = []
-        for n in range(1, 100):
-            contacts.append((f'first {n}', f'last {n}', f'email{n}@example.com'))
+        
 
         # add data to the treeview
-        for contact in contacts:
-            tree.insert('', tk.END, values=contact)
+        for site in self.youbikes:
+            tree.insert('', tk.END, values=(site['sna'],site['mday'],site['total'],site['available_rent_bikes'],site['available_return_bikes']))
 
 
         def item_selected(event):
