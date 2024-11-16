@@ -68,8 +68,8 @@ class Window(ThemedTk):
         bottomFrame2.pack(expand=True,fill='x',padx=10,pady=(0,30))
 
     def click_left_button(self):
-        get_youbike_data()
-        customDialog = CustomDialog(self,title="這是我的Dialog")
+        youbike_data = get_youbike_data()
+        customDialog = CustomDialog(self,title="這是我的Dialog",youbikes=youbike_data)
         #messagebox.showinfo("資訊","按左按鈕")
 
     def click_right_button(self):

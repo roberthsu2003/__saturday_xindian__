@@ -4,14 +4,18 @@ from tkinter import ttk
 from tkinter.messagebox import showinfo
 
 class CustomDialog(Dialog):
-    def __init__(self, parent, title=None):
-        print("abc")
+    def __init__(self, parent, title=None,youbikes=[]):
+        
+        self.youbikes = youbikes
         super().__init__(parent, title)
         
 
     def body(self, master):
         # 創建對話框主體。返回應具有初始焦點的控件。
         # define columns
+        for site in self.youbikes:
+            print(site)
+            
         columns = ('first_name', 'last_name', 'email')
 
         tree = ttk.Treeview(master, columns=columns, show='headings')
