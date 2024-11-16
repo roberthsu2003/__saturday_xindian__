@@ -21,12 +21,9 @@ class CustomDialog(Dialog):
     def buttonbox(self):
         # Add custom buttons (overriding the default buttonbox)
         box = tk.Frame(self)
-        self.ok_button = tk.Button(box, text="OK", width=10, command=self.ok, default=tk.ACTIVE)
-        self.ok_button.pack(side=tk.LEFT, padx=5, pady=5)
-        self.cancel_button = tk.Button(box, text="Cancel", width=10, command=self.cancel)
-        self.cancel_button.pack(side=tk.LEFT, padx=5, pady=5)
+        self.ok_button = tk.Button(box, text="確定", width=10, command=self.ok)
+        self.ok_button.pack(padx=5, pady=5)
         self.bind("<Return>", self.ok)
-        self.bind("<Escape>", self.cancel)
         box.pack()
 
     def ok(self, event=None):
