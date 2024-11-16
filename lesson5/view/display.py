@@ -14,7 +14,7 @@ class CustomDialog(Dialog):
         # define columns
         columns = ('first_name', 'last_name', 'email')
 
-        tree = ttk.Treeview(self, columns=columns, show='headings')
+        tree = ttk.Treeview(master, columns=columns, show='headings')
 
         # define headings
         tree.heading('first_name', text='First Name')
@@ -44,14 +44,15 @@ class CustomDialog(Dialog):
         tree.pack(side='left')
 
         # add a scrollbar
-        scrollbar = ttk.Scrollbar(self, orient=tk.VERTICAL, command=tree.yview)
+        scrollbar = ttk.Scrollbar(master, orient=tk.VERTICAL, command=tree.yview)
         tree.configure(yscroll=scrollbar.set)
         scrollbar.pack(side='left',fill='y')
         
 
     def apply(self):
         # 當用戶按下確定時處理數據
-        self.result = self.name_entry.get()
+        #self.result = self.name_entry.get()
+        pass
         
     def buttonbox(self):
         # Add custom buttons (overriding the default buttonbox)
