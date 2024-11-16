@@ -1,7 +1,7 @@
 from ttkthemes import ThemedTk
 from tkinter import ttk,messagebox
 import tkinter as tk
-from view.display import CustomDialog
+from view import CustomDialog
 
 
 class Window(ThemedTk):
